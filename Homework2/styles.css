@@ -1,0 +1,27 @@
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-color {
+    color: white;
+    background-color: blueviolet;
+    width: 100%;
+    margin: 5px;
+}
+
+.mg-t-b {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.mg-l-r {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.bd {
+    border-style: solid;
+    border-color: gray;
+}
