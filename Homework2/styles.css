@@ -48,6 +48,16 @@ li a {
     text-decoration: none;
 }
 
+li button {
+    display: block;
+    color: white;
+    background-color: black;
+    padding: 14px;
+    margin-left: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
 li a:hover {
     background-color: white;
     color: black;
