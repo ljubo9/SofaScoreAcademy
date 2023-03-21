@@ -23,10 +23,10 @@ module.exports = {
      */
     createObjectWithMethod(value) {
         let valueObj = {
-            getValue: function(value) {
-                return value
-            },
-            value: valueObj.getValue()
+            value: value,
+            getValue: function() {
+                return this.value
+            }
         }
 
         return valueObj
@@ -89,7 +89,13 @@ module.exports = {
     /**
      * Returns a string that is loosely equal to boolean `true`. This one is tricky :)
      */
-    stringLooselyEqualToTrue() {},
+    stringLooselyEqualToTrue() {
+        let myString = "1"
+
+        if (myString == true) {
+            return myString
+        }
+    },
 
     /**
      * Returns correct sum of a and b.
@@ -108,8 +114,8 @@ module.exports = {
      * @param {Date} date
      */
     formatDate(date) {
-        let day = date.getDay()
-        let month = date.getMonth()
+        let day = date.getDate()
+        let month = date.getMonth() + 1
         let year = date.getFullYear()
         return day + '-' + month + '-' + year
     },
@@ -120,7 +126,9 @@ module.exports = {
      * @param {number[]} numberArray
      */
     sortNumberArray(numberArray) {
-        numberArray.sort()
+        numberArray.sort(function(a, b) {
+            return a - b
+        })
     },
 
     /**
@@ -171,7 +179,11 @@ module.exports = {
             }
 
             getName() {
-                return callGetName()
+                return this.callGetName(this.name)
+            }
+
+            callGetName(name) {
+                return name
             }
         }
 
@@ -182,7 +194,11 @@ module.exports = {
             }
 
             getLanguage() {
-                return callGetLanguage()
+                return this.callGetLanguage(this.language)
+            }
+
+            callGetLanguage(language) {
+                return language
             }
         }
 
@@ -203,8 +219,8 @@ module.exports = {
     timeoutIncrement(consumer) {
         for (var i = 1; i <= 3; i += 1) {
             setTimeout(() => {
-                /* your function goes here, or instead of this function */
-            }, 1000)
+                consumer(i)
+            }, 1000 * i)
         }
     },
 }
