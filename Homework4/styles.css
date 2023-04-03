@@ -26,11 +26,31 @@
         width: calc(33.33% - 10px);
         margin-bottom: 20px;
         text-align: center;
+        position: relative;
+        border-style: solid;
+        border-color: black;
+        border-radius: 35px;
+    }
+    
+    #pokemon-list li button {
+        top: 0;
+        right: 0;
+        padding: 10px;
+        background-color: #f00;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    
+    #pokemon-list li.hidden {
+        display: none;
     }
     
     #pokemon-list h2 {
-        margin: 0 0 10px;
+        margin: 10px;
         font-size: 20px;
+        font-style: italic;
+        text-transform: capitalize;
     }
     
     #pokemon-list img {

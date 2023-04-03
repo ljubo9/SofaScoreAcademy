@@ -33,8 +33,9 @@
     </footer>
 
     <script>
-        const pokemonList = document.getElementById('pokemon-list')
-        const apiUrl = 'https://pokeapi.co/api/v2/pokemon/'
+        // JavaScript code to fetch and display the Pokemon data
+        const pokemonList = document.getElementById('pokemon-list');
+        const apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
 
         fetch(apiUrl)
             .then(response => response.json())
@@ -55,13 +56,29 @@
                             if (data.sprites) {
                                 const imageUrl = data.sprites.front_default
                                 pokemonImage.src = imageUrl
+
+                            } else {
+                                pokemonImage.alt = pokemon.name
                             }
-                        })
+
+                        });
+
+                    const pokemonButton = document.createElement('button')
+                    pokemonButton.textContent = 'Hide'
+                    pokemonButton.addEventListener('click', () => {
+                        pokemonItem.classList.toggle('hidden')
+                        if (pokemonButton.textContent === 'Hide') {
+                            pokemonButton.textContent = 'Show'
+                        } else {
+                            pokemonButton.textContent = 'Hide'
+                        }
+                    });
 
                     pokemonItem.appendChild(pokemonName)
                     pokemonItem.appendChild(pokemonImage)
+                    pokemonItem.appendChild(pokemonButton)
                     pokemonList.appendChild(pokemonItem)
-                })
+                });
             })
             .catch(error => console.error('Error fetching data:', error))
     </script>
