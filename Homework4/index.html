@@ -33,11 +33,9 @@
     </footer>
 
     <script>
-        // JavaScript code to fetch and display the Pokemon data
-        const pokemonList = document.getElementById('pokemon-list');
-        const apiUrl = 'https://pokeapi.co/api/v2/pokemon/';
+        const pokemonList = document.getElementById('pokemon-list')
 
-        fetch(apiUrl)
+        fetch('https://pokeapi.co/api/v2/pokemon/')
             .then(response => response.json())
             .then(data => {
                 const pokemonData = data.results
