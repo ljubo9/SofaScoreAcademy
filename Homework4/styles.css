@@ -1,0 +1,39 @@
+    header,
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(188, 39, 39);
+    }
+    
+    .headerImg {
+        margin: 15px;
+    }
+    
+    body {
+        background-color: lightgrey;
+    }
+    
+    #pokemon-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+    }
+    
+    #pokemon-list li {
+        width: calc(33.33% - 10px);
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    #pokemon-list h2 {
+        margin: 0 0 10px;
+        font-size: 20px;
+    }
+    
+    #pokemon-list img {
+        width: 100%;
+        height: auto;
+    }
